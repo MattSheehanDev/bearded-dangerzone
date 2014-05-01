@@ -13,34 +13,100 @@
 /* Small screens */
 html 
 {
-    font: 100%/1.5 "Open Sans", sans-serif;
+    font: 18px/1.5 "Open Sans", sans-serif;
+    line-height: 1.6;
     font-weight: 400;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Medium screens (640px) */
-@media(min-width: 40rem)
+@media screen and (max-width: 30rem)
 {
-    html 
+    html
     {
-        font-size: 112%;
-    }
+        font-size: 100%;
+    }  
 }
 
-/* Large screens (1024px) */
-@media(min-width: 64rem) 
+@media screen and (min-width: 45rem)
 {
-    html 
+    html
     {
-        font-size: 120%;
-    }
+        font-size: 112.5%;
+    }  
 }
+
+@media screen and (min-width: 64rem)
+{
+    html
+    {
+        font-size: 118.75%;
+    }  
+}
+
+@media screen and (min-width: 85rem)
+{
+    html
+    {
+        font-size: 125%;
+    }  
+}
+
+@media screen and (min-width: 120rem)
+{
+    html
+    {
+        font-size: 131.25%;
+    }  
+}
+
+@media screen and (min-width: 160rem)
+{
+    html
+    {
+        font-size: 137.5%;
+    }  
+}
+
 
 body 
 {
     background-color: #fff;
-    color: #555;
+    color: #000;
+    font-size: 1rem;
+}
+
+h5
+{
+    font-size: 1.250rem;
+}
+
+h4
+{
+    font-size: 1.563rem;
+    font-weight: 200;
+}
+
+h3
+{
+    font-size: 1.953rem;
+}
+
+h2
+{
+    font-size: 2.441rem;
+}
+
+h1
+{
+    font-size: 3.052rem;
+}
+
+
+
+*::selection
+{
+    background: #D6EDFF;
 }
 
 
@@ -58,7 +124,7 @@ header
     margin: 2rem 0;
 }
 
-@media(min-width: 40rem) 
+@media(min-width: 50rem) 
 {
     .intro 
     {
@@ -66,7 +132,7 @@ header
     }
 }
 
-header h1 
+header .title
 {
     border: 3px solid #fff;
     -moz-border-radius: 3px;
@@ -75,7 +141,7 @@ header h1
     color: #fff;
     padding: .4rem .6rem;
     display: inline-block;
-    font-size: 1.8rem;
+    font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
@@ -89,10 +155,35 @@ header p
 header a 
 {
     color: rgba(255,255,255,0.9);
-    text-decoration: underline;
 }
 
+header ul
+{
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
 
+header li
+{
+    display: inline;
+    list-style: none;
+    text-align: center;
+    border-right: .1rem solid #fff;
+    padding-right: .2rem;
+}
+
+header li:last-of-type
+{
+    border-right: none;
+}
+
+.box
+{
+    border: .1rem dashed #fff;
+}
 
 
 footer
@@ -107,7 +198,7 @@ footer
     max-width: 150px;
 }
 
-@media (min-width: 40rem) 
+@media (min-width: 50rem) 
 {
     .mobile 
     {
@@ -131,7 +222,8 @@ section
         border-top: none;
     }
 
-@media (min-width: 40rem) 
+
+@media (min-width: 50rem) 
 {
     section 
     {
@@ -152,10 +244,10 @@ section
     .grid.container 
     {
         border: 2px;
-        padding: 1rem 1rem 0 1rem;
+        padding: 0 1rem;
     }
 
-@media (min-width: 40rem) 
+@media (min-width: 50rem) 
 {
     .grid.container 
     {
@@ -169,46 +261,37 @@ section
     }
 
 
-    .grid span 
-    {
-        display: block;
-        padding: 1rem;
-        font-size: 0.9rem;
-        color: #BBC7CC;
-    }
-
-
-
 
 /* Parent container */
 .container 
 {
     margin: 0 auto;
     max-width: 53rem;
-    width: 90%;
+    width: 100%;
 }
+
 
 
 /* Columns */
-.column 
+@media screen and (min-width: 50rem) 
 {
-    margin-bottom: 1.5rem;
-}
 
-@media (min-width: 40rem) 
-{
     .column 
     {
         float: left;
         margin: 0;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0 1rem;
     }
-}
 
     .column.full 
     {
         width: 100%;
+    }
+
+
+    .column.three-fourths
+    {
+        width: 74.95%;
     }
 
     .column.two-thirds 
@@ -236,29 +319,24 @@ section
         float: right;
     }
 
+}
+
 
 /* Rows */
 .row 
 {
-    /*background: rgba(225,255,255,0.1);*/
-    border: 2px solid rgba(255,255,255,0.2);
-    padding: 1rem 1rem 0 1rem;
-    margin-bottom: 1rem;
+    padding: 0 .5rem;
 }
 
-@media (min-width: 40rem) 
+
+@media screen and (min-width: 64rem) 
 {
     .row 
     {
-        padding: 1rem 0 0 0;
+        padding: 0 3rem;
     }
 }
 
-
-    .row:last-of-type 
-    {
-        margin-bottom: 0;
-    }
 
 
 
@@ -268,13 +346,13 @@ section
 hr 
 {
     border: 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ccc;
     margin: 2rem auto;
     width: 3rem;
 }
 
 
-@media (min-width: 40rem) 
+@media (min-width: 50rem) 
 {
     hr 
     {
@@ -300,12 +378,70 @@ img
 
 blockquote 
 {
-    border-left: 3px solid #CCC;
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
     font-style: italic;
     margin-bottom: 1.5rem;
-    padding-left: 1rem;
+    padding: 1rem;
+    quotes: "\201C""\201D""\2018""\2019";
 }
 
+    blockquote:before
+    {
+        color: #ccc;
+        content: open-quote;
+        font-size: 250%;
+        line-height: 0.1rem;
+        margin-right:  0.25rem;
+        vertical-align: -0.4rem;
+    }
+
+    blockquote p
+    {
+        display: inline;
+    }
+
+
+span 
+{
+    display: inline-block;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #BBC7CC;
+}
+
+@media screen and (min-width: 50rem)
+{
+    span 
+    {
+        letter-spacing: 2px;
+    }
+}
+
+
+/******* Lists *******/
+ul
+{
+    margin: 0;
+    text-align: left;
+
+}
+
+
+@media screen and (min-width: 50rem)
+{
+    ul
+    {
+        display: inline-block;
+    }
+}
+
+
+li
+{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
 
 
 /******************************************** Buttons **************************************/
@@ -334,16 +470,17 @@ blockquote
     border-radius: 3px;
     background-color: #497bad;
     padding: 0.7rem 1.5rem;
-    vertical-align: middle;
+    margin: auto auto;
     white-space: nowrap;
     text-decoration: none;
+    width: 50%;
     
     -webkit-transition: background ease 0.2s;
     -moz-transition: background ease 0.2s;
     transition: background ease 0.2s;
 }
 
-    @media (min-width: 40rem) 
+    @media (min-width: 50rem) 
     {
         .button 
         {
@@ -365,7 +502,6 @@ blockquote
     border-radius: 3px;
     background-color: #497bad;
     padding: 0.7rem 1.5rem;
-    vertical-align: middle;
     white-space: nowrap;
     text-decoration: none;
     
@@ -394,6 +530,7 @@ blockquote
 
     -webkit-transition: border-color ease 0.5s;
     -moz-transition: border-color ease 0.5s;
+    -o-transition: border-color ease 0.5s;
     transition: border-color ease 0.5s;
 
 }
